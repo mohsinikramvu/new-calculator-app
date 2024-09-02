@@ -1,0 +1,142 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+/* @font-face {
+  font-family: "LCD Font";
+  src:  local('LCD Font'),
+  url(./fonts/Scientific_Calculator_LCD.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+} */
+.App {
+  height: 100vh;
+}
+
+.App .header-navigation {
+  background: #cccccc;
+  padding: 20px;
+  width: 100%;
+  text-align: right;
+  /*height: auto;*/
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.App .header-navigation .top-bar {
+  position: relative;
+  overflow-x: auto;
+}
+
+.top-value {
+  color: white;
+}
+
+/*.acButton button {*/
+/*  font-size: 21px !important;*/
+/*}*/
+.App .header-navigation span.top-value {
+  position: absolute;
+  font-size: 18px;
+  right: 5px;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.height-60 {
+  height: 60%;
+}
+
+.height-40 {
+  height: 40%;
+}
+
+.col-12,
+.col-4,
+.col-8 {
+  padding: 0 !important;
+}
+
+.App .header-navigation span {
+  font-size: 70px;
+  color: #fff;
+  /* font-family: "LCD Font"; */
+}
+
+.App .button button,
+.acButton button {
+  font-size: 35px;
+  width: 100%;
+  border: 1px solid #c1c1c1;
+  outline: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2a527c;
+  color: #fff;
+  font-weight: 600;
+}
+
+.App .button button img {
+  max-width: 30px;
+}
+
+.App .button {
+  /*padding: 0 15px;*/
+}
+
+@media (max-width: 767px) {
+  .App .button button {
+    font-size: 25px;
+    /*height: 85px;*/
+  }
+
+  .acButton button,
+  .backspaceButton button {
+    font-size: 21px !important;
+  }
+
+  .App .button button img {
+    max-width: 22px;
+  }
+}
+
+.App .button button:focus {
+  outline: none;
+  box-shadow: none;
+}
